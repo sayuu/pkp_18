@@ -1,0 +1,154 @@
+
+These are the tasks that users were asked to complete in the web based study.
+The code that users were meant to write is put inside triple <<< >>>'s.
+
+-------------------------------------------------------------
+Task 1:
+
+// convert "1 2 3 4" --> "1,2,3,4"
+public String spacesToCommas(String message) {
+    String space = " ";
+    String comma = ",";
+    return <<<message.replaceAll(space, comma)>>>;
+} 
+
+-------------------------------------------------------------
+Task 2:
+
+// convert "100" --> 100
+String input = "100";
+int output = <<<new Integer(input)>>>;
+
+-------------------------------------------------------------
+Task 3:
+
+// make sure that the list has no more than the
+// given number of elements
+public void trimSize(List list, int noMoreThan) {
+    while (list.size() > noMoreThan) {
+        list.remove(<<<list.length() - 1>>>);
+    }
+}
+
+-------------------------------------------------------------
+Task 4:
+
+public boolean isFruit(String food) {
+    Set<String> fruits = 
+    new HashSet<String>(getFruitList());
+    return <<<fruits.contains(food)>>>;
+}
+
+-------------------------------------------------------------
+Task 5:
+
+public boolean isVowel(char c) {
+    String vowels = "aeiou";
+    return -1 != <<<vowels.indexOf(c)>>>;
+}
+
+-------------------------------------------------------------
+Task 6:
+
+Map<Integer, String> numberNames = new HashMap<Integer, String>();
+Integer key = 3;
+String value = "Three";
+// make numberNames have the entry:
+// 3 --> "Three"
+<<<numberNames.put(key, value)>>>;
+
+-------------------------------------------------------------
+Task 7:
+
+public int absoluteValue(int x) {
+    // use standard java method to
+    // return the absolute value of x
+    return <<<Math.abs(x)>>>;
+}
+
+-------------------------------------------------------------
+Task 8:
+
+public Vector<String> getTokens(String message) {
+    Vector<String> tokens = new Vector<String>();
+    StringTokenizer st = 
+    new StringTokenizer(message, " ");
+    while (st.hasMoreTokens()) {
+        <<<tokens.add(st.nextToken())>>>;
+    }
+    return tokens
+}
+
+-------------------------------------------------------------
+Task 9:
+
+// count the a's
+String message = "how many a's are in this message?";
+int count = 0;
+for (int i = 0; i < message.length(); i++) {
+    char c = <<<message.charAt(i)>>>;
+    if (c == 'a') {
+        count++;
+    }
+}
+
+-------------------------------------------------------------
+Task 10:
+
+// example output:
+// autoexec.bat
+// config.sys
+// Documents and Settings
+// Windows
+public void ls(File dir) {
+    for (File f : dir.listFiles()) {
+        <<<System.out.println(f.getName())>>>;
+    }
+}
+
+-------------------------------------------------------------
+Task 11:
+
+public String repeatString(String s, int thisManyTimes) {
+    StringBuffer buf = new StringBuffer();
+    for (int i = 0; i < thisManyTimes; i++) {
+        <<<buf.append(s)>>>;
+    }
+    return buf.toString();
+}
+
+-------------------------------------------------------------
+Task 12:
+
+public List<String> getLines(BufferedReader in) {
+    List<String> lines = new Vector<String>();
+    while (in.ready()) {
+        <<<lines.add(in.readLine())>>>;
+    }
+    return lines;
+}
+
+-------------------------------------------------------------
+Task 13:
+
+public void logMessage(String message) {
+    PrintWriter log = new PrintWriter(
+    new FileWriter("log.txt", true));
+    <<<log.println(message)>>>;
+    log.close();
+}
+
+-------------------------------------------------------------
+Task 14:
+
+// convert "HeLLo WoRlD" --> "hello world"
+String input = "HeLLo WoRlD";
+String output = <<<input.toLowerCase()>>>;
+
+-------------------------------------------------------------
+Task 15:
+
+String filename = "input.txt";
+BufferedReader in = <<<new BufferedReader(new FileReader(filename))>>>;
+in.read(...);
+in.close();
